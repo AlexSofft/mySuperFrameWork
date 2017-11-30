@@ -11,13 +11,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
-public class BaseTest {
+public class BaseTest extends API {
 
     protected static WebDriver driver;
 
+    @Override
+    public WebDriver getDriver() {
+        return driver;
+    }
     @BeforeClass
     public static void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:/chromedriver_win32/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -28,4 +32,6 @@ public class BaseTest {
     public static void tearDown() {
         driver.quit();
     }
+
+
 }
