@@ -45,6 +45,7 @@ public class GoogleTest extends BaseTest {
                 .until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#b-toolbar__left > div > div > div.b-toolbar__group.b-toolbar__group_left > div > a > span")));
         WebElement logoutButton = driver.findElement(By.cssSelector("#PH_logoutLink"));
         logoutButton.click();
+        //finish
     }
 
 
